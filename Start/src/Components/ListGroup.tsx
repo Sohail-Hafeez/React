@@ -1,15 +1,15 @@
-function ListGroup() {
-    let items = ["pakistan", "india", "bangladesh", "nepal", "srilanka", "bhutan", "maldives", "afghanistan", "myanmar", "thailand", "vietnam", "cambodia", "laos", "malaysia", "indonesia", "singapore", "brunei", "philippines", "east timor", "papua new guinea"];
+import type { MouseEvent } from "react";
 
-    items = [];
+function ListGroup() {
+    let items = ["pakistan", "india", "bangladesh", "nepal", "srilanka", "bhutan", "maldives", "afghanistan", "myanmar"];
+
+    const handleClick = (event: MouseEvent) => console.log(event);
     return (
         <>
             <h1>List</h1>
-            {items.length === 0 ? <p>No item found</p> : null}
-            {/* {items.length === 0 && <p>No item found</p>} */}
             <ul className="list-group">
                 {items.map((item) => (
-                    <li className="list-group-item" key={item}>{item}</li>
+                    <li className="list-group-item active" key={item} onClick={() => handleClick}>{item}</li>
                 ))}
             </ul>
         </>
