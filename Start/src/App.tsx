@@ -2,10 +2,12 @@ import Message from "./Components/Message";
 import ListGroup from "./Components/ListGroup";
 
 function App() {
+  let items = ["pakistan", "india", "bangladesh", "nepal", "srilanka", "bhutan", "maldives", "afghanistan", "myanmar"];
+
   return (
     <div>
       <Message />
-      <ListGroup />
+      <ListGroup items={items} heading="Countries" />
     </div>
   );
 }
